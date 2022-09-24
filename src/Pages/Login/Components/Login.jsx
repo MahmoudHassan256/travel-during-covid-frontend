@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Cookies from 'universal-cookie'
 import '../../../styles/styles.css'
 import { useNavigate } from 'react-router-dom'
+import { defaultUrl } from '../../../Components/Constants';
 export default function Login() {
     const navigate = useNavigate();
     const [emailEl, setEmail] = useState('');
@@ -71,7 +72,7 @@ export default function Login() {
                                     if (!emailEl || !passwordEl) { setErroremail("Fill form") }
                                     else {
                                         const user = { email: emailEl, password: passwordEl };
-                                        const URL = "http://localhost:3001/api/users/getUser"
+                                        const URL = defaultUrl+"api/users/getUser"
                                         const response =await fetch(URL, {
                                             method: "post",
                                             headers:

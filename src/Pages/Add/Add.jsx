@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
+import { defaultUrl } from '../../Components/Constants'
 import './styles.css'
 
 export default function Add() {
     const [data, updateFlight] = useState({ from: '', to: '', price: 0, departing: '', airplaneName: '', maxSeat: 0, departingTime: '', arrivalTime: '' })
     const handel = async () => {
         if (data.airplaneName !== '' && data.arrivalTime !== '' && data.departing !== '' && data.departingTime !== '' && data.from !== '' && data.maxSeat !== 0 && data.price !== 0 && data.to !== '') {
-            fetch("http://localhost:3001/api/flights/createFlight", {
+            fetch(defaultUrl+"api/flights/createFlight", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'

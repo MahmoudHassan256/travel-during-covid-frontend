@@ -12,10 +12,11 @@ import { useDispatch } from 'react-redux'
 import Flight from '../Pages/Flight/Flight'
 import CheckOut from '../Pages/CheckOut/CheckOut'
 import Add from '../Pages/Add/Add'
+import { defaultUrl } from './Constants'
 
 
 export default function Layout() {
-    const FlightsUrl="http://localhost:3001/api/flights/getFlights";
+    const FlightsUrl=defaultUrl+"api/flights/getFlights";
     const dispatch=useDispatch();
     useEffect(()=>{
         async function FetchFlights(){

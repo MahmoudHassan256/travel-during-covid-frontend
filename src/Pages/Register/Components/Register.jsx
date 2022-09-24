@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Cookies from 'universal-cookie';
 import '../../../styles/styles.css'
 import { useNavigate } from 'react-router-dom'
+import { defaultUrl } from '../../../Components/Constants';
 export default function Register() {
     const [emailEl, setEmail] = useState('');
     const [passwordEl, setPassword] = useState('');
@@ -98,7 +99,7 @@ export default function Register() {
                                 if (!emailEl || !passwordEl || !fullnameEl) { setErroremail("Fill form") }
                                 else {
                                     const user = { fullname: fullnameEl, email: emailEl, password: passwordEl };
-                                    const registerURL = "http://localhost:3001/api/users/createUser";
+                                    const registerURL = defaultUrl+"api/users/createUser";
                                     const response = await fetch(registerURL, {
                                         method: "post",
                                         headers:

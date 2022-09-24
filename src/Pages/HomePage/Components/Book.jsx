@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { defaultUrl } from '../../../Components/Constants';
 import '../../../styles/styles.css'
 export default function Book() {
     const navigate = useNavigate();
@@ -15,8 +16,8 @@ export default function Book() {
     const [fromArray, updateFromArray] = useState([]);
     const [toArray, updatetoArray] = useState([]);
 
-    const UrlFrom = "http://localhost:3001/api/flights/getFlightsFroms";
-    const UrlTo = "http://localhost:3001/api/flights/getFlightsTos";
+    const UrlFrom = defaultUrl+"api/flights/getFlightsFroms";
+    const UrlTo = defaultUrl+"api/flights/getFlightsTos";
     useEffect(() => {
         async function fetchFroms() {
             const response = await (await fetch(UrlFrom)).json();

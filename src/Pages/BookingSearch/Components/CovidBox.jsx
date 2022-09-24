@@ -2,7 +2,8 @@ import { faCouch, faDoorOpen, faMartiniGlass, faMaskFace, faTrafficLight, faUten
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useRef,useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
-const CovidUrl = "http://localhost:3001/api/covid/getCovid"
+import { defaultUrl } from '../../../Components/Constants';
+const CovidUrl = defaultUrl+"api/covid/getCovid"
 export default function CovidBox(props) {
     const covid = useRef();
     const navigate=useNavigate();
