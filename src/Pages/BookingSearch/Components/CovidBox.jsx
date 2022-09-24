@@ -17,7 +17,7 @@ export default function CovidBox(props) {
             });
             const content = await response.json();
             covid.current = content[0];
-            console.log(content[0]);
+            console.log(content?.[0]);
         }
         getData();
     })
